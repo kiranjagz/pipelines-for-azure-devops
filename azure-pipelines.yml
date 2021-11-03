@@ -4,23 +4,28 @@ trigger:
 variables:
   global_variable: 'This is a global varible'    # this is available to all jobs
 
-jobs:
-- job: job1
-  pool:
-    vmImage: 'ubuntu-latest'
-  variables:
-    job_variable1: 'Varible for job1'    # this is only available in job1
-  steps:
-  - bash: echo $(global_variable)
-  - bash: echo $(job_variable1)
-  - bash: echo $job_variable1 # variables are available in the script environment too
+stages:
+  - stage: 'Build'
+    displayName: 'Build'
+    jobs:
+    - job: job1
+      pool:
+        vmImage: 'ubuntu-latest'
+      variables:
+        job_variable1: 'Varible for job1'    # this is only available in job1
+      steps:
+      - bash: echo $(global_variable)
+      - bash: echo $(job_variable1)
 
-- job: job2
-  pool:
-    vmImage: 'ubuntu-latest'
-  variables:
-    job_variable2: 'Varible for job2'    # this is only available in job2
-  steps:
-  - bash: echo $(global_variable)
-  - bash: echo $(job_variable2)
-  - bash: echo $global_variable
+  - stage: 'Deploy'
+    displayName: 'Deploy'
+    jobs:
+    - job: job2
+      pool:
+        vmImage: 'ubuntu-latest'
+      variables:
+        job_variable2: 'Varible for job2'    # this is only available in job2
+      steps:
+      - bash: echo $(global_variable)
+      - bash: echo $(job_variable2)
+      - bash: echo $global_variable
