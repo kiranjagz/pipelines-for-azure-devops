@@ -5,7 +5,7 @@ variables:
   global_variable: 'This is a global varible'    # this is available to all jobs
 
 stages:
-  - stage: 'Build'
+  - stage: 'Stage A'
     displayName: 'Build'
     jobs:
     - job: job1
@@ -17,7 +17,7 @@ stages:
       - bash: echo $(global_variable)
       - bash: echo $(job_variable1)
 
-  - stage: 'Deploy'
+  - stage: 'Stage B'
     displayName: 'Deploy'
     jobs:
     - job: job2
