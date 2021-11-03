@@ -13,7 +13,7 @@ jobs:
   steps:
   - bash: echo $(global_variable)
   - bash: echo $(job_variable1)
-  - bash: echo $JOB_VARIABLE1 # variables are available in the script environment too
+  - bash: echo $job_variable1 # variables are available in the script environment too
 
 - job: job2
   pool:
@@ -23,4 +23,4 @@ jobs:
   steps:
   - bash: echo $(global_variable)
   - bash: echo $(job_variable2)
-  - bash: echo $GLOBAL_VARIABLE
+  - bash: echo $global_variable
