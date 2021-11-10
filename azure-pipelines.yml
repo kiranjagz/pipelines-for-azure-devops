@@ -3,10 +3,11 @@ trigger:
 
 variables:
   global_variable: 'This is a global varible'    # this is available to all jobs
+  secret_varible: $(MY-SECRET)
 
 stages:
   - stage: 'Build'
-    displayName: 'Build'
+    displayName: 'build stuff'
     jobs:
     - job: job1
       pool:
@@ -16,9 +17,10 @@ stages:
       steps:
       - bash: echo $(global_variable)
       - bash: echo $(job_variable1)
+      - bash: echo $(secret_varible)
 
   - stage: 'Deploy'
-    displayName: 'Deploy'
+    displayName: 'deploy stuff'
     jobs:
     - job: job2
       pool:
@@ -29,3 +31,4 @@ stages:
       - bash: echo $(global_variable)
       - bash: echo $(job_variable2)
       - bash: echo $global_variable
+      - bash: echo $(secret_varible)
