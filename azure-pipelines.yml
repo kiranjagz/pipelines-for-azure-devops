@@ -7,6 +7,8 @@ variables:
     value: 'This is a global varible'    # this is available to all jobs
   - name: secret_varible
     value: $(MY-SECRET)
+  - name: real_secret
+    value: $(REAL-SECRET)
 
 stages:
   - stage: 'Build'
@@ -23,6 +25,7 @@ stages:
       - bash: echo $(secret_varible)
       - bash: echo $(Name)
       - bash: echo $(Role)
+      - bash: echo $(real_secret)
 
   - stage: 'Deploy'
     displayName: 'deploy stuff'
