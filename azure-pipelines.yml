@@ -4,6 +4,7 @@ trigger:
 variables:
   global_variable: 'This is a global varible'    # this is available to all jobs
   secret_varible: $(MY-SECRET)
+  group: bobbi_force_group_x
 
 stages:
   - stage: 'Build'
@@ -18,6 +19,8 @@ stages:
       - bash: echo $(global_variable)
       - bash: echo $(job_variable1)
       - bash: echo $(secret_varible)
+      - bash: echo $(Name)
+      - bash: echo $(Role)
 
   - stage: 'Deploy'
     displayName: 'deploy stuff'
