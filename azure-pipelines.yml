@@ -4,9 +4,9 @@ trigger:
 variables:
   - group: bobbi_force_group_x
   - name: global_variable
-  - value: 'This is a global varible'    # this is available to all jobs
+    value: 'This is a global varible'    # this is available to all jobs
   - name: secret_varible
-  - value: $(MY-SECRET)
+    value: $(MY-SECRET)
 
 stages:
   - stage: 'Build'
