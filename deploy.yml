@@ -20,5 +20,5 @@ stages:
       - bash: echo $(job_variable2)
       - bash: echo $global_variable
       - bash: echo $(secret_varible)
-      - bash: echo ${{ paramenters.code }}
-      - bash: echo ${{ paramenters.key }}
+      - bash: echo ${{ parameters.code }}
+      - bash: echo ${{ parameters.key }}
