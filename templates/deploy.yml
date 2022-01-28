@@ -14,7 +14,7 @@ parameters:
 
 stages:
   - stage: 'deploy_${{ parameters.deployStageName }}'
-    displayName: 'deploy_stuff'
+    displayName: 'deploy_${{ parameters.deployStageName }}'
     jobs:
     - job: ${{ parameters.displayJobName }}
       pool:
