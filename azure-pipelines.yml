@@ -26,17 +26,7 @@ stages:
       - bash: echo $(Name)
       - bash: echo $(Role)
       - bash: echo $(real_secret)
-
-  - stage: 'Deploy'
-    displayName: 'deploy stuff'
-    jobs:
-    - job: job2
-      pool:
-        vmImage: 'ubuntu-latest'
-      variables:
-        job_variable2: 'Varible for job2'    # this is only available in job2
-      steps:
-      - bash: echo $(global_variable)
-      - bash: echo $(job_variable2)
-      - bash: echo $global_variable
-      - bash: echo $(secret_varible)
+  - template: deploy.yml
+    -parameters:
+      code: bob
+      key: 8
