@@ -1,0 +1,11 @@
+parameters:
+- name: code
+- type: string
+
+- name: key
+- value: int
+- default: 7
+
+steps:
+    - script: echo ${{ paramenters.code }}
+    - script: echo ${{ parameters.key }}
