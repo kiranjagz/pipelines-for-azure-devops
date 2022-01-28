@@ -1,10 +1,10 @@
 parameters:
 - name: code
-- type: string
+  type: string
 
 - name: key
-- type: int
-- default: 7
+  type: int
+  default: 7
 
 stages:
   - stage: 'Deploy'
