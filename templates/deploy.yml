@@ -16,7 +16,7 @@ stages:
   - stage: 'Deploy ${{ parameters.deployStageName }}'
     displayName: 'deploy stuff'
     jobs:
-    - job: {{ parameters.displayJobName }}
+    - job: ${{ parameters.displayJobName }}
       pool:
         vmImage: 'ubuntu-latest'
       variables:
