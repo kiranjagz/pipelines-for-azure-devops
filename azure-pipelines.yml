@@ -26,7 +26,14 @@ stages:
       - bash: echo $(Name)
       - bash: echo $(Role)
       - bash: echo $(real_secret)
-  - template: deploy.yml
+  - template: templates/deploy.yml
     parameters:
      code: bob
      key: 8
+     displayJobName: This job deploys to development
+     deployStageName: DEV
+  - template: templates/deploy.yml
+    parameters:
+     code: jeffff
+     displayJobName: This job deploys to sandbox
+     deployStageName: SAND
