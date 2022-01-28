@@ -27,6 +27,6 @@ stages:
       - bash: echo $(Role)
       - bash: echo $(real_secret)
   - template: deploy.yml
-    -parameters:
-      code: bob
-      key: 8
+    parameters:
+     code: bob
+     key: 8
