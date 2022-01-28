@@ -3,7 +3,7 @@ parameters:
   type: string
 
 - name: key
-  type: int
+  type: number
   default: 7
 
 stages:
