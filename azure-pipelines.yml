@@ -31,9 +31,9 @@ stages:
      code: bob
      key: 8
      displayJobName: This job deploys to development
-     deployStageName: DEV
+     deployStageName: dev
   - template: templates/deploy.yml
     parameters:
      code: jeffff
      displayJobName: This job deploys to sandbox
-     deployStageName: SAND
+     deployStageName: sand
