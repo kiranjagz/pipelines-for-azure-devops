@@ -30,10 +30,10 @@ stages:
     parameters:
      code: bob
      key: 8
-     displayJobName: This job deploys to development
+     displayJobName: This_job_deploys_to_development
      deployStageName: dev
   - template: templates/deploy.yml
     parameters:
      code: jeffff
-     displayJobName: This job deploys to sandbox
+     displayJobName: This_job_deploys_to_sandbox
      deployStageName: sand
