@@ -6,6 +6,19 @@ parameters:
 - value: int
 - default: 7
 
-steps:
-    - script: echo ${{ paramenters.code }}
-    - script: echo ${{ parameters.key }}
+stages:
+  - stage: 'Deploy'
+    displayName: 'deploy stuff'
+    jobs:
+    - job: job2
+      pool:
+        vmImage: 'ubuntu-latest'
+      variables:
+        job_variable2: 'Varible for job2'    # this is only available in job2
+      steps:
+      - bash: echo $(global_variable)
+      - bash: echo $(job_variable2)
+      - bash: echo $global_variable
+      - bash: echo $(secret_varible)
+      - bash: echo ${{ paramenters.code }}
+      - bash: echo ${{ paramenters.key }}
