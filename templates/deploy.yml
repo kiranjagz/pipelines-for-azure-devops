@@ -13,14 +13,14 @@ parameters:
   type: string
 
 stages:
-  - stage: 'Deploy' ${{ parameters.deployStageName }}
+  - stage: 'Deploy ${{ parameters.deployStageName }}'
     displayName: 'deploy stuff'
     jobs:
     - job: {{ parameters.displayJobName }}
       pool:
         vmImage: 'ubuntu-latest'
       variables:
-        inline_job_variable2: 'Varible for' ${{ parameters.displayJobName }}    # this is only available in job2
+        inline_job_variable2: 'Varible for ${{ parameters.displayJobName }}'   # this is only available in job2
       steps:
       - bash: echo $(global_variable)
       - bash: echo $(job_variable2)
