@@ -1,2 +1,2 @@
 # Introduction 
-This is where is all started.
+Just examples of azure devops pipeline using loads of yaml.
