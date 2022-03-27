@@ -9,6 +9,8 @@ variables:
     value: $(MY-SECRET)
   - name: real_secret
     value: $(REAL-SECRET)
+  - name: MyRunNumber
+    value: '1.0.0-CI+$(Build.BuildNumber)'
 
 stages:
   - stage: 'Build'
@@ -21,6 +23,8 @@ stages:
         job_variable1: 'Varible for job1'    # this is only available in job1
       steps:
       - script: echo 'hello'
+      - script: echo $(myRunNumber)
+      - bash: echo $(Build.BuildNumber)
       - bash: echo $(global_variable)
       - bash: echo $(job_variable1)
       - bash: echo $(secret_varible)
