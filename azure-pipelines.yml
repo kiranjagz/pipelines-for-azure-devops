@@ -25,14 +25,13 @@ stages:
       - script: echo 'hello'
       - script: echo $(myRunNumber)
       - bash: echo $(Build.BuildNumber)
-      - bash: echo $(TeamProject)_$(Build.DefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
+      - bash: echo $(Build.DefinitionName)
       - bash: echo $(global_variable)
       - bash: echo $(job_variable1)
       - bash: echo $(secret_varible)
       - bash: echo $(Name)
       - bash: echo $(Role)
       - bash: echo $(real_secret)
-  - template: templates/build-number.yml
   - template: templates/deploy.yml
     parameters:
      code: bob
