@@ -32,6 +32,7 @@ stages:
       - bash: echo $(Name)
       - bash: echo $(Role)
       - bash: echo $(real_secret)
+  - template: templates/build-number.yml
   - template: templates/deploy.yml
     parameters:
      code: bob
