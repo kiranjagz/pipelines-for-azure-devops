@@ -25,6 +25,7 @@ stages:
       - script: echo 'hello'
       - script: echo $(myRunNumber)
       - bash: echo $(Build.BuildNumber)
+      - bash: echo $(TeamProject)_$(Build.DefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
       - bash: echo $(global_variable)
       - bash: echo $(job_variable1)
       - bash: echo $(secret_varible)
